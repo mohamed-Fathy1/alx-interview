@@ -2,7 +2,6 @@
 '''
     Script that determines if all the boxes can be opened.
 '''
-# from functools import reduce
 
 
 def canUnlockAll(boxes):
@@ -10,29 +9,31 @@ def canUnlockAll(boxes):
        Method that determines if all the boxes can be opened.
        @boxes: list of lists
     '''
-    isUnlockble = True
 
     res_dct = {i: False for i in range(len(boxes))}
     res_dct[0] = True
 
+    missedIndex = 1
     loopAgain = True
-    i = 0
-    while (loopAgain and (not isUnlockble or i == 0)):
+    while (loopAgain):
         keys = boxes[0]
         loopAgain = False
-        for i in range(1, len(boxes)):
-            # print(keys)
+        missingKeys = False
+        for i in range(missedIndex, len(boxes)):
             if res_dct[i]:
                 keys += boxes[i]
                 continue
 
             if i not in keys:
-                isUnlockble = False
+                missingKeys = True
+                if loopAgain is False:
+                    missedIndex = i
                 continue
 
             keys += boxes[i]
             res_dct[i] = True
-            loopAgain = True
+            if missingKeys:
+                loopAgain = True
 
-    isUnlockble = all(flag is True for flag in list(res_dct.values()))
+    isUnlockble = all(lock is True for lock in list(res_dct.values()))
     return isUnlockble
