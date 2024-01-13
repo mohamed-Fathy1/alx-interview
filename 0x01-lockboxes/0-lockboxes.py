@@ -1,9 +1,15 @@
 #!/usr/bin/python3
-
+'''
+    Script that determines if all the boxes can be opened.
+'''
 # from functools import reduce
 
 
 def canUnlockAll(boxes):
+    '''
+       Method that determines if all the boxes can be opened.
+       @boxes: list of lists
+    '''
     isUnlockble = True
     # list = reduce(lambda acc, arr: acc + arr, boxes)
     # for i in range(1, len(boxes)):
