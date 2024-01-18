@@ -25,14 +25,14 @@ def minOperations(n):
         '''
         return pasteStr
 
-    if n < 2:
+    if n < 2 or type(n) is not int:
         return 0
     pasteStr = copyAll()
     strOp += paste()
     numOfOp = 2
 
     while len(strOp) < n:
-        if len(strOp) % 2 == 0 or len(strOp) == n - 1:
+        if len(strOp) == n - 1:
             strOp += paste()
             numOfOp += 1
         elif (len(strOp) * 2) < n:
