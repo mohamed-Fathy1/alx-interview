@@ -32,7 +32,7 @@ def minOperations(n):
     numOfOp = 2
 
     while len(strOp) < n:
-        if len(strOp) == n - 1:
+        if len(strOp) % 2 == 0 or len(strOp) == n - 1:
             strOp += paste()
             numOfOp += 1
         elif (len(strOp) * 2) < n:
