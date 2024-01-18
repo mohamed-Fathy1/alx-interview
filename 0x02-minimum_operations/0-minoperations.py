@@ -14,9 +14,15 @@ def minOperations(n):
     pasteStr = ''
 
     def copyAll():
+        '''
+           returns the string copied
+        '''
         return strOp
 
     def paste():
+        '''
+            returns the string pasted
+        '''
         return pasteStr
 
     if n < 2:
