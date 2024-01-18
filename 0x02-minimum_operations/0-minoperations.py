@@ -1,17 +1,17 @@
 #!/usr/bin/python3
 """
-Given a number n, write a method that calculates the fewest number of
-operations needed to result in exactly n H characters in the file.
+    Given a number n, write a method that calculates the fewest number of
+    operations needed to result in exactly n H characters in the file.
 """
 
 
 def minOperations(n):
     """
-    Method that calculates the fewest number of operations needed to result in
-    exactly n H characters in the file.
+        Method that calculates the fewest number of operations
+        needed to result in exactly n H characters in the file.
     """
     strOp = 'H'
-    pasteStr = None
+    pasteStr = ''
 
     def copyAll():
         return strOp
