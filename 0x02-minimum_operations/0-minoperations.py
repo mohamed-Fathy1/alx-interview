@@ -16,12 +16,16 @@ def minOperations(n):
     numOp = 0
     i = 2
 
+    # print('H')
+
     while i <= n:
         if n % i == 0:
             numOp += i
             n = n / i
         else:
             i += 1
+
+        # print('H' * i)
 
     return numOp
     # strOp = 'H'
